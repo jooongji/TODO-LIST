@@ -1,0 +1,85 @@
+@charset 'utf-8';
+
+body{
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.weather{
+    height: 5vh;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.weather>span{
+    color: white;
+    font-size: 1vw;
+    margin-right: 10px;
+}
+
+/* ************ header *********** */
+
+
+/* main */
+.wrap_todo{
+    height: 90vh;
+}
+
+.todo{
+    width: 50%;
+    height: 25vw;
+    justify-content: space-evenly;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.wrap_inp{
+    width: 100%;
+}
+
+.inp{
+    width: 70%;
+    height: 5vw;
+    border: 0;
+    border-bottom: 3px solid white;
+    border-radius: 20%;
+    background-color: transparent;
+    outline: none;
+    font-size: 2vw;
+    color: white;
+}
+
+.inp::placeholder{
+    font-size: 2vw;
+    color: white;
+    /* placeholder 가운데 정렬 */
+    text-align: center;
+}
+
+.clock{
+    height: 30%;
+}
+
+.welcome{
+    font-size: 3vw;
+}
+
+.time{
+    font-size: 2vw;
+}
+
+
+
+/* ****** main fin ***** */
+.bg-location{
+    height: 5vh;
+    display: flex;
+    align-items: center;
+}
+
+.bg-location>span{
+    color: white;
+    font-size: 1vw;
+    margin-left: 10px;
+}
+
