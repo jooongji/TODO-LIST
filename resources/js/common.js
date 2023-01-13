@@ -54,3 +54,19 @@ let getQueryString = params => {
 
     return tmp.join('&');
 }
+
+let findFromLocalStorage = key => {
+    return JSON.parse(localStorage.getItem(key));
+}
+
+let setToLocalStorage = (key,data) => {
+    localStorage.setItem(key, JSON.stringify(data));
+}
+
+let findFromSessionStorage = key => {
+    return JSON.parse(sessionStorage.getItem(key));
+}
+
+let setToSessionStorage = (key,data) => {
+    sessionStorage.setItem(key, JSON.stringify(data));
+}
