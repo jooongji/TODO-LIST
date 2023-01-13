@@ -21,16 +21,22 @@ body{
 
 
 /* main */
-.wrap_todo{
+.contents{
+    width:100%;
     height: 90vh;
+    flex-wrap: wrap;
+    
 }
 
 .todo{
-    width: 50%;
+    width:50%;
     height: 25vw;
+    margin:0 10px 0 10px;
     justify-content: space-evenly;
     background-color: rgba(0, 0, 0, 0.3);
     color: white;
+    border-radius: 10px;
+
 }
 
 .wrap_inp{
@@ -65,10 +71,42 @@ body{
 }
 
 .time{
-    font-size: 2vw;
+    font-size: 1.5vw;
 }
 
+.user{
+    font-size: 1.5vw;
+}
 
+.logout{
+    padding: 3px 5px 3px 5px;
+    margin-left: 30px;
+    background-color: lightcoral;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.todo-list{
+    width: 50%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-self: flex-start;
+}
+
+.item{
+    font-size: 1.5vw;
+    font-weight: bolder;
+    padding: 20px;
+    margin: 5px;
+    background-color: lightcoral;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.fa-trash-can{
+    color:yellow;
+}
 
 /* ****** main fin ***** */
 .bg-location{
