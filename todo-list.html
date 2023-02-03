@@ -14,7 +14,8 @@
     <script defer src="./resources/js/todo/todo.js"></script>
     <script defer src="./resources/js/todo/weather-api.js"></script>
     <script defer src="./resources/js/todo/unsplash-api.js"></script>
-
+    <script defer src="./resources/js/todo/bored.js"></script>
+    <script defer src="./resources/js/todo/speech.js"></script>
 </head>
 <body>
     <div class="weather row">
@@ -22,13 +23,14 @@
     <div class="contents row">
         <div class="todo col">
             <div class="clock col">
-                <div class="welcome"><span>Welcome 2023!</span></div>
+                <div class="welcome"><span id="recomand">Welcome 2023!</span></div>
                 <div class="time row"><span id="nowTime">14 : 05 : 00</span></div>
             </div>
             <div class="user" id="userDiv"></div>
             <div class="wrap_inp col">
                 <input type="text" class="inp" id="inp"  placeholder="Type your name here">
             </div>
+            <i class="fa-solid fa-microphone-lines icon-mic" id="mic"></i>
         </div>
         <ul class="todo-list row" id="todoList">
 

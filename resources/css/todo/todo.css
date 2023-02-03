@@ -121,3 +121,18 @@ body{
     margin-left: 10px;
 }
 
+#recomand{
+    white-space: nowrap;
+    font-size: 1.5vw;
+}
+
+
+.icon-mic{
+    font-size: 3vw;
+    color: lightcoral;
+    cursor: pointer;
+}
+
+.icon-mic:hover{
+    color: yellow;
+}

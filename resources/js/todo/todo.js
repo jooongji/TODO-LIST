@@ -26,40 +26,43 @@ let findTodoAboutUser = todo => {
     return userTodo;
 }
 
-let addTodo = ev => {
-    if(ev.keyCode == 13){
+let addTodoData = () => {
+    if(!inp.value) return;
+    let todo = JSON.parse(localStorage.getItem('todo'));
 
-        if(!inp.value) return;
-        let todo = JSON.parse(localStorage.getItem('todo'));
-
-        if(!todo){
-            let todo = [{'user':user, items:[inp.value]}];
-            localStorage.setItem('todo', JSON.stringify(todo));
-            inp.value = '';
-            renderTodo();
-            return;
-        }
-
-        let userTodo = findTodoAboutUser(todo);
-
-        if(!userTodo){
-            let todoItem = {'user':user, items:[inp.value]};
-            todo.push(todoItem);
-            localStorage.setItem('todo', JSON.stringify(todo));
-            inp.value = '';
-            renderTodo();
-            return;         
-        }
-
-        if(userTodo.items.length >= 5) {
-            alert('5개 까지만 등록이 가능합니다.');
-            return;
-        }
-
-        userTodo.items.push(inp.value);
+    if(!todo){
+        let todo = [{'user':user, items:[inp.value]}];
         localStorage.setItem('todo', JSON.stringify(todo));
         inp.value = '';
         renderTodo();
+        return;
+    }
+
+    let userTodo = findTodoAboutUser(todo);
+
+    if(!userTodo){
+        let todoItem = {'user':user, items:[inp.value]};
+        todo.push(todoItem);
+        localStorage.setItem('todo', JSON.stringify(todo));
+        inp.value = '';
+        renderTodo();
+        return;         
+    }
+
+    if(userTodo.items.length >= 5) {
+        alert('5개 까지만 등록이 가능합니다.');
+        return;
+    }
+
+    userTodo.items.push(inp.value);
+    localStorage.setItem('todo', JSON.stringify(todo));
+    inp.value = '';
+    renderTodo();
+}
+
+let addTodo = ev => {
+    if(ev.keyCode == 13){
+        addTodoData();      
     }
 }
 
