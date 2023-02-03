@@ -113,7 +113,7 @@ let renderTime = () => {
 
 if(user){
     userDiv.append(createElement('span',{text:`안녕하세요! ${user.name}`}));
-
+    todo.append(createElement('i',{prop:{className:'fa-solid fa-microphone-lines icon-mic', id:'mic'}}))
     let logout = createElement('span',{prop:{className:'logout'}, text:`logout`});
     
     logout.addEventListener('click', ev => {
