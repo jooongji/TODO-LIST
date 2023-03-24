@@ -1,29 +1,17 @@
+const synth = window.speechSynthesis; 
 
-(async () => {   
+const callBoredAPI = async () => {
+    let response = await fetch('http://www.boredapi.com/api/activity?minaccessibility=0&maxaccessibility=0.1')
+    let recomanded = await response.json();        
+    recommandTxt.innerHTML = recomanded.activity;
+    return recomanded.activity;
+}
 
-    const synth = window.speechSynthesis;
+recomand.addEventListener('click', async ev => {    
+    let text = await callBoredAPI();
+    let utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+    speechSynthesis.speak(utterance);
+})     
 
-    let loadVoices = async () => {
-        let response = await fetch('http://www.boredapi.com/api/activity?minaccessibility=0&maxaccessibility=0.1')
-        let recomanded = await response.json();        
-        recomand.innerHTML = recomanded.activity;
-        recomand.value = recomanded.activity;
-    }   
-
-    if ('onvoiceschanged' in synth) {
-        synth.onvoiceschanged = loadVoices;
-    } else {
-        loadVoices();
-    }
-
-    recomand.addEventListener('click', ev => {
-        let utterance = new SpeechSynthesisUtterance(recomand.value);
-        speechSynthesis.speak(utterance);
-        console.dir(synth)
-    })
-
-    
-  
-
-})();
 

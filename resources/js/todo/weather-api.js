@@ -35,8 +35,8 @@ let getUserCoord = () => {
     console.dir(weatherData)
 
     //name, main.temp
-    let weatherDiv = $('.weather');
+    let weatherDiv = $('.top');
     let weatherSpan = createElement('span', {text:`${weatherData.main.temp}℃ @ ${weatherData.name}`})
-    weatherDiv.append(weatherSpan);
+    weatherDiv.prepend(weatherSpan);
 
 })();

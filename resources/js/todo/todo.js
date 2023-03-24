@@ -92,27 +92,9 @@ let renderTodo = () => {
     })
 }
 
-let renderTime = () => {
-
-    setInterval(() => {
-
-        let now = new Date();
-        let hour = now.getHours();
-        let minute = now.getMinutes();
-        let second = now.getSeconds();
-
-        hour = hour > 9 ? hour:'0'+hour;
-        minute = minute > 9 ? minute:'0'+minute;
-        second = second > 9 ? second:'0'+second;
-
-        let timeText = `${hour} : ${minute} : ${second}`;
-        nowTime.innerHTML = timeText;
-
-    }, 1000);
-}
-
 if(user){
-    userDiv.append(createElement('span',{text:`안녕하세요! ${user.name}`}));
+
+    userDiv.append(createElement('span',{text:`Hello! ${user.name}`}));
     todo.append(createElement('i',{prop:{className:'fa-solid fa-microphone-lines icon-mic', id:'mic'}}))
     let logout = createElement('span',{prop:{className:'logout'}, text:`logout`});
     
@@ -121,13 +103,18 @@ if(user){
         location.reload();
     })
 
-    userDiv.append(logout);
+    mic.addEventListener('click', ev=>{
+        startSTT();
+    })
+
+    document.querySelector(".top").append(logout);
     inp.placeholder = '할 일을 작성하세요.';
     inp.addEventListener('keyup', addTodo);
     renderTodo();
+   
 }else{
     inp.addEventListener('keyup', addUser);
 }
 
-renderTime();
+
 
